@@ -542,16 +542,16 @@ h3{
     width: 400px;
   }
   .contact_container {
-    justify-content: space-evenly;
+   justify-content: center;
     display: flex;
   }
   .contact_icon {
     font-size: 2rem;
-    margin-right: 30px;
+    margin-right: 10px;
+    padding-top: 50px;
   }
   .contact__information {
     display: flex;
-    /* margin-bottom: 1rem; */
   }
 }
 
