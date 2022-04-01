@@ -542,7 +542,11 @@ h3{
     width: 400px;
   }
   .contact_container {
-    justify-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .contact_icon {
+    font-size: 2rem;
   }
 }
 
