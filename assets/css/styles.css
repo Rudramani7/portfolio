@@ -547,6 +547,11 @@ h3{
   }
   .contact_icon {
     font-size: 2rem;
+    margin-right: 30px;
+  }
+  .contact__information {
+    display: flex;
+    /* margin-bottom: 1rem; */
   }
 }
 
