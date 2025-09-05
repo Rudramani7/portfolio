@@ -1,25 +1,36 @@
+/* ===========================
+   1. Import Fonts
+=========================== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* ===========================
+   2. Root Variables
+=========================== */
 :root {
   --header-height: 3rem;
   --font-semi: 600;
-}
 
+  --first-color: #2ecc71; /* emerald green */
+  --second-color: #1b1b1b; /* dark charcoal */
+  --gardient-color: linear-gradient(to right, #11998e, #38ef7d);
 
-
-:root {
-  --first-color: #4070f4;
-  --second-color: #0e2431;
-  --gardient-color: linear-gradient(to right, #5001fb, #8e0af3);
-}
-
-:root {
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.5rem;
   --nomral-font-size: 0.938rem;
-}
 
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
 
 @media screen and (min-width: 768px) {
   :root {
@@ -29,25 +40,9 @@
   }
 }
 
-
-:root {
-  --mb-1: 0.5rem;
-  --mb-2: 1rem;
-  --mb-3: 1.5rem;
-  --mb-4: 2rem;
-  --mb-5: 2.5rem;
-  --mb-6: 3rem;
-}
-
-
-:root {
-  --z-back: -10;
-  --z-normal: 1;
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
-
-
+/* ===========================
+   3. Global Styles
+=========================== */
 *,
 ::before,
 ::before {
@@ -81,13 +76,24 @@ a {
   text-decoration: none;
 }
 
+.button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.button:focus {
+  outline: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-
+/* ===========================
+   4. Layout Helpers
+=========================== */
 .bd_grid {
   max-width: 1024px;
   display: grid;
@@ -98,6 +104,9 @@ img {
   margin-right: var(--mb-2);
 }
 
+/* ===========================
+   5. Header & Navigation
+=========================== */
 .header {
   width: 100%;
   position: fixed;
@@ -107,7 +116,6 @@ img {
   background: #fff;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
-
 
 .nav {
   height: var(--header-height);
@@ -139,11 +147,8 @@ img {
   color: #fff;
 }
 
-.nav_link:hover {
-  position: relative;
-}
-
-.nav_link:hover::after {
+.nav_link:hover::after,
+.active::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -163,33 +168,25 @@ img {
   cursor: pointer;
 }
 
-
-.active::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 0.18rem;
-  left: 0;
-  top: 2rem;
-  background-color: var(--first-color);
-}
-
 .show {
   right: 0;
 }
 
+/* ===========================
+   6. Home Section
+=========================== */
 .home {
   height: calc(100vh - 3rem);
   row-gap: 1rem;
 }
 
 .home_data {
-  align-self: center;
+  align-self: top;
 }
 
 .home_title {
   font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
+  margin-top: 100px;
 }
 
 .home_title-color {
@@ -216,30 +213,30 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 300px;
+  height: 385px;
 }
 
 .home_img svg {
   width: 100%;
 }
 
-
-.button {
+/* ===========================
+   7. Buttons
+=========================== */
+.button,
+.button1 {
   display: inline-block;
   color: #fff;
-  padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
   background: var(--gardient-color);
 }
 
-.button1 {
-  display: inline-block;
-  color: #fff;
+.button {
   padding: 0.75rem 2.5rem;
-  font-weight: var(--font-semi);
-  border-radius: 0.5rem;
-  background: var(--gardient-color);
+}
+
+.button1 {
   padding: 10px;
   margin-top: 10px;
 }
@@ -248,6 +245,9 @@ img {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
 }
 
+/* ===========================
+   8. Section Titles
+=========================== */
 .section {
   padding-top: 3rem;
   padding-bottom: 2rem;
@@ -274,8 +274,9 @@ img {
   background-color: var(--first-color);
 }
 
-
-
+/* ===========================
+   9. About Section
+=========================== */
 .about_container {
   row-gap: 2rem;
   text-align: center;
@@ -286,12 +287,23 @@ img {
 }
 
 .about_img {
+  display: flex;
   justify-content: center;
 }
 
-.about_img svg {
+.about_img img {
   width: 300px;
-  border-radius: 0.5rem;
+  height: 250px;
+}
+
+/* ===========================
+   10. Skills Section
+=========================== */
+.skill_img img {
+  width: 500px;
+  height: 600px;
+  display: block;
+  margin: 0 auto;
 }
 
 .skills_container {
@@ -343,30 +355,25 @@ img {
 .skill_html {
   width: 85%;
 }
-
 .skill_css {
   width: 75%;
 }
-
 .skill_js {
   width: 70%;
 }
-
 .skill_reactjs {
   width: 65%;
 }
-
 .skill_nodejs {
   width: 60%;
 }
-
-
 .skill_mongodb {
   width: 75%;
 }
 
-
-
+/* ===========================
+   11. Projects Section
+=========================== */
 .project {
   text-align: center;
 }
@@ -391,25 +398,29 @@ img {
 }
 
 .github1 {
-  color:black;
+  color: black;
   margin-right: 50px;
 }
 
 .github2 {
-  color:black;
+  color: black;
   margin-right: 60px;
 }
 
-.live{
+.live {
   color: black;
 }
 
-h3{
-  font-family:var(--body-font) ;
+h3 {
+  font-family: var(--body-font);
   font-size: var(--nomral-font-size);
   font-weight: var(--font-semi);
   color: var(--first-color);
 }
+
+/* ===========================
+   12. Contact Section
+=========================== */
 .control_input {
   width: 100%;
   font-size: var(--nomral-font-size);
@@ -430,7 +441,9 @@ h3{
   margin-left: auto;
 }
 
-
+/* ===========================
+   13. Footer
+=========================== */
 .footer {
   background-color: var(--second-color);
   color: #fff;
@@ -454,6 +467,9 @@ h3{
   margin: 0 var(--mb-2);
 }
 
+/* ===========================
+   14. Media Queries
+=========================== */
 @media screen and (min-width: 768px) {
   body {
     margin: 0;
@@ -466,7 +482,6 @@ h3{
   .section-title {
     margin-bottom: var(--mb-6);
   }
-
   .section-title::after {
     width: 80px;
     top: 3rem;
@@ -475,21 +490,17 @@ h3{
   .nav {
     height: calc(var(--header-height) + 1rem);
   }
-
   .nav_items {
     margin-left: var(--mb-6);
     margin-bottom: 0;
   }
-
   .nav_list {
     display: flex;
     padding-top: 0;
   }
-
   .nav_toggle {
     display: none;
   }
-
   .nav_link {
     color: var(--second-color);
   }
@@ -497,9 +508,8 @@ h3{
   .home {
     height: 100vh;
   }
-
   .home_data {
-    align-self: flex-end;
+    align-self: center;
   }
   .home_social {
     padding-top: 0;
@@ -507,17 +517,13 @@ h3{
     flex-direction: row;
     align-self: flex-end;
   }
-
   .home_social-icon {
     margin-bottom: 0;
     margin-right: var(--mb-4);
   }
-
   .home_img {
-    width: 460px;
     bottom: 15%;
   }
-
   .home_img svg {
     width: 100%;
   }
@@ -529,7 +535,7 @@ h3{
     text-align: initial;
   }
 
-  .about_img svg {
+  .about_img img {
     width: 450px;
   }
 
@@ -543,7 +549,7 @@ h3{
     width: 400px;
   }
   .contact_container {
-   justify-content: center;
+    justify-content: center;
     display: flex;
   }
   .contact_icon {
@@ -554,8 +560,8 @@ h3{
   .contact__information {
     display: flex;
   }
-  .contact__title{
-     margin: 10px; 
+  .contact__title {
+    margin: 10px;
   }
 }
 
@@ -564,8 +570,15 @@ h3{
     margin-left: auto;
     margin-right: auto;
   }
-
   .home_img {
     right: 10%;
+  }
+}
+
+/* Optional: adjust for smaller devices */
+@media screen and (max-width: 480px) {
+  .skill_img img {
+    max-width: 300px;
+    height: 400px;
   }
 }
