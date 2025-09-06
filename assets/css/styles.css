@@ -216,7 +216,7 @@ img {
   height: 385px;
 }
 
-.home_img svg {
+.home_img img {
   width: 100%;
 }
 
@@ -353,22 +353,28 @@ img {
 }
 
 .skill_html {
-  width: 85%;
+  width: 90%;
 }
 .skill_css {
-  width: 75%;
+  width: 90%;
 }
 .skill_js {
-  width: 70%;
+  width: 90%;
 }
 .skill_reactjs {
-  width: 65%;
+  width: 90%;
+}
+.skill_nextjs{
+  width: 90%;
+}
+.skill_redux{
+  width: 90%;
 }
 .skill_nodejs {
-  width: 60%;
+  width: 90%;
 }
 .skill_mongodb {
-  width: 75%;
+  width: 90%;
 }
 
 /* ===========================
@@ -524,7 +530,7 @@ h3 {
   .home_img {
     bottom: 15%;
   }
-  .home_img svg {
+  .home_img img {
     width: 100%;
   }
 
